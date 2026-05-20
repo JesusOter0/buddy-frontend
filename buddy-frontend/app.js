@@ -1,20 +1,28 @@
-// Esperar a que el documento cargue
+// Configuración de Supabase (Usamos solo la clave pública por seguridad)
+const SUPABASE_URL = 'https://npupnlhjntmsnszwpzso.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_VGdoyF5S6PnFW7i9cflbWA_uaVXDmGM';
+
+// Inicializar el cliente de Supabase
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Validación del Registro
+    // 1. Validación e Intercepción del Registro
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
-        registerForm.addEventListener('submit', function(event) {
+        registerForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Validar longitud de contraseña
             if (password.length < 6) {
-                event.preventDefault(); // Detiene el envío
-                alert('⚠️ La contraseña debe tener al menos 6 caracteres por seguridad.');
+                alert('⚠️ La contraseña debe tener al menos 6 caracteres.');
                 return;
             }
-            // Aqui tenemos que conectar SUPABASE
-            console.log('Validación superada. Listo para registrar en Supabase.');
+
+            console.log('Formulario validado. Credenciales listas para Supabase.');
         });
     }
 
