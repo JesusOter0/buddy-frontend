@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buddy - Mi Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+<div class="flex min-h-screen">
+  <aside class="w-64 bg-white border-r p-6 hidden md:block">
+    <a href="index.html" class="text-2xl font-bold text-blue-600 mb-10 block">Buddy</a>
+    <nav class="space-y-4">
+      <a href="#" class="block text-blue-600 font-semibold bg-blue-50 px-4 py-2 rounded-lg">Panel Principal</a>
+      <a href="#" class="block text-gray-600 hover:text-black px-4 py-2">Plan de Comidas</a>
+      <a href="#" class="block text-gray-600 hover:text-black px-4 py-2">Mis Métricas</a>
+      <a href="perfil.html" class="block text-gray-600 hover:text-black px-4 py-2">Perfil</a>
+    </nav>
+  </aside>
+
+  <main class="flex-1 p-8">
+    <header class="flex justify-between items-center mb-8">
+      <h1 class="text-2xl font-bold">¡Hola de nuevo, Atleta!</h1>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">+ Nuevo Plan</button>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <p class="text-gray-500 text-sm">Ritmo Cardíaco</p>
+        <h3 class="text-3xl font-bold">130 <span class="text-sm font-medium text-gray-400">bpm</span></h3>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <p class="text-gray-500 text-sm">Pasos totales</p>
+        <h3 class="text-3xl font-bold">5,500</h3>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <p class="text-gray-500 text-sm">Progreso Diario</p>
+        <h3 class="text-3xl font-bold">85%</h3>
+      </div>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+      <h2 class="text-xl font-bold mb-4">Tu Plan de Comidas de hoy</h2>
+      <div class="space-y-4">
+        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+          <span>Desayuno: Avena con frutas</span>
+          <span class="text-green-600 font-medium">Completado</span>
+        </div>
+        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+          <span>Almuerzo: Pechuga de pollo y arroz</span>
+          <span class="text-blue-600 font-medium">Pendiente</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
